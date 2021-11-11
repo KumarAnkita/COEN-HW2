@@ -8,3 +8,4 @@ functions:
     image: ankitakumar14/slack-interactive
     environment:
       content_type: application/json
+

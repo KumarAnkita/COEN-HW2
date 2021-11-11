@@ -1,23 +1,18 @@
-import requests
 import json
 import urllib
 
 def handle(req):
     urlstring = urllib.unquote(req).decode('utf8').strip('payload=')
     response = json.loads(urlstring)
-    a =  response.keys()
-    for key in a:
-       new = key
     data = {
         "attachments": [
             {
-                "ky": response[key],
                 "replace_original": True,
                 "response_type": "ephemeral",
                 "fallback": "Required plain-text summary of the attachment.",
                 "color": "#36a64f",
                 "pretext": "Ahh yeah! Great choice, COEN 241 is absolutely amazing!",
-                "author_name": "Ankita Kumar",
+                "author_name": "",
                 "author_link": "https://github.com/KumarAnkita/COEN-HW2.git",
                 "author_icon": "https://github.com/KumarAnkita/KumarAnkita.git",
                 "title": "COEN 241",
@@ -28,25 +23,8 @@ def handle(req):
                 "footer": "Slack Apps built on OpenFaas",
                 "footer_icon": "https://a.slack-edge.com/45901/marketing/img/_rebrand/meta/slack_hash_256.png",
                 "ts": 123456789
-
             }
         ]
     }
     return json.dumps(data)
 
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
